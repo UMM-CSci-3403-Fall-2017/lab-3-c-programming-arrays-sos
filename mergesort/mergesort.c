@@ -33,17 +33,18 @@ void mergeRanges(int* values, int start, int mid, int end){
 		++secondIndex;
 	}
 	for (int i = 0; i < rangeSize; ++i) {
-		values[i + startIndex] = destination[i];
+		values[i + start] = destination[i];
 	}
+	free(destination);
 }
 
 void mergesortRange(int* values, int start, int end) {
         int rangeSize = end - start;
-        int* outerArr;
         if(needsSorting(rangeSize)) {
                 int mid = (start + end)/2;
                 mergesortRange(values, start, mid);
                 mergesortRange(values, mid, end);
+		mergeRanges(values, start, mid, end);
 
         }
 }
