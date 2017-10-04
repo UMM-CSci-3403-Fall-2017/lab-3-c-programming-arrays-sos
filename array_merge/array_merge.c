@@ -7,7 +7,7 @@ int* array_merge(int num_arrays, int* sizes, int** values){
 	int allElementsLength = 0;	
 	//the following for loop sorts all the elements in each subarray
 	//in the matrix.
-	if(num_arrays < 2 && sizes[0] == 1){
+	if((num_arrays < 2 && sizes[0] == 1) || num_arrays == 0){
 		allElementsLength = 1;
 	} else{
 	for(int i = 0; i < num_arrays; i++){
@@ -23,7 +23,6 @@ int* array_merge(int num_arrays, int* sizes, int** values){
 	int* allElements = (int*)calloc(allElementsLength, sizeof(int));
 	int allElementCounter = 0;
 	for(int i = 0; i < num_arrays; i++){
-		allElementCounter++;
 		for(int p = 0; p < sizes[i]; p++){
 			allElements[allElementCounter] = values[i][p];
 			allElementCounter++;
@@ -69,6 +68,7 @@ int* array_merge(int num_arrays, int* sizes, int** values){
 
         	}
 	}
+	free(allElements);
 	return returnArr;
 }
 
