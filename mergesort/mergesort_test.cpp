@@ -15,6 +15,8 @@ TEST(Mergesort, HandleEmptyList) {
   int b[] = { };
   mergesort(0, b);
   arrays_match(0, a, b);
+  //free(a);
+  //free(b);
 }
 
 TEST(Mergesort, HandleSingletonList) {
@@ -22,6 +24,8 @@ TEST(Mergesort, HandleSingletonList) {
   int b[] = { 5 };
   mergesort(1, b);
   arrays_match(1, a, b);
+  //free(a);
+  //free(b);
 }
 
 TEST(Mergesort, HandleOrderedPair) {
@@ -29,6 +33,8 @@ TEST(Mergesort, HandleOrderedPair) {
   int expected[] = { 5, 8 };
   mergesort(2, a);
   arrays_match(2, a, expected);
+  //free(a);
+  //free(expected);
 }
 
 TEST(Mergesort, HandleUnorderedPair) {
@@ -36,6 +42,8 @@ TEST(Mergesort, HandleUnorderedPair) {
   int expected[] = { 5, 8 };
   mergesort(2, a);
   arrays_match(2, a, expected);
+  //free(a);
+  //free(expected);
 }
 
 TEST(Mergesort, HandleMixed) {
@@ -43,6 +51,8 @@ TEST(Mergesort, HandleMixed) {
   int expected[] = { 0, 2, 3, 5, 6, 8, 9 };
   mergesort(7, a);
   arrays_match(7, a, expected);
+  //free(a);
+  //free(expected);
 }
 
 TEST(Mergesort, HandleOrdered) {
@@ -50,6 +60,8 @@ TEST(Mergesort, HandleOrdered) {
   int expected[] = { 0, 2, 3, 5, 6, 8, 9 };
   mergesort(7, a);
   arrays_match(7, a, expected);
+  //free(a);
+  //free(expected);
 }
 
 TEST(Mergesort, HandleReversed) {
@@ -57,6 +69,8 @@ TEST(Mergesort, HandleReversed) {
   int expected[] = { 0, 2, 3, 5, 6, 8, 9 };
   mergesort(7, a);
   arrays_match(7, a, expected);
+  //free(a);
+  //free(expected);
 }
 
 int main(int argc, char* argv[]) {
